@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Slang Dictionary</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        input {
+            padding: 10px;
+            width: 300px;
+        }
+        button {
+            padding: 10px;
+        }
+        #result {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Slang Dictionary</h1>
+    <input type="text" id="wordInput" placeholder="Enter a slang word">
+    <button onclick="searchSlang()">Search</button>
+    <div id="result"></div>
+
+    <script>
+        // Slang dictionary stored in JavaScript
+        const slangDictionary = {
+            "lit": "Exciting or amazing.",
+            "sus": "Suspicious or questionable.",
+            "yeet": "To throw something with force.",
+            "noob": "A beginner or inexperienced person.",
+            "salty": "Being upset or bitter about something."
+        "Touch grass": "A phrase used to tell someone to go outside and take a break from gaming or the internet.",
+            "simp": "Someone who shows excessive sympathy and attention toward someone else, often in a romantic context.",
+            "cap": "To lie or exaggerate.",
+            "flex": "To show off or boast about something."
+        "Bruh"
+        };
+        function searchSlang() {
+            const word = document.getElementById("wordInput").value.toLowerCase();
+            const resultDiv = document.getElementById("result");
+
+            if (!word) {
+                resultDiv.innerHTML = "Please enter a slang word.";
+                return;
+            }
+
+            // Search for the slang word in the dictionary
+            if (slangDictionary[word]) {
+                resultDiv.innerHTML = `<h3>${word}</h3><p>${slangDictionary[word]}</p>`;
+            } else {
+                resultDiv.innerHTML = `<p style="color: red;">Sorry, we don't have a definition for "${word}".</p>`;
+            }
+        }
+    </script>
+</body>
+</html>
